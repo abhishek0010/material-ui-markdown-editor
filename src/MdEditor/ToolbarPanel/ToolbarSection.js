@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
-import { ToolbarSeparator } from 'material-ui/Toolbar'
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import Button from './Button'
 import DropDown from './DropDown'
 
@@ -12,7 +13,6 @@ const ToolbarSection = ({ items }) => (
           : <Button key={key} {...item} />
       ))
     }
-    <ToolbarSeparator />
   </div>
 )
 

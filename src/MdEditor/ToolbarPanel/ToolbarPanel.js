@@ -1,20 +1,20 @@
-import React, { PropTypes } from 'react'
-import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar'
-import ToolbarSection from './ToolbarSection'
-import getButtonsSchema from './buttonsSchema'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+//MUI stuff
+import Toolbar from '@material-ui/core/Toolbar';
+
+//Custom components
+import ToolbarSection from './ToolbarSection';
+import getButtonsSchema from './buttonsSchema';
 
 const ToolbarPanel = ({ cm, tokens, title }) => (
   <Toolbar>
-    <ToolbarGroup firstChild>
       {
         getButtonsSchema(cm, tokens).map((section, i) =>
           <ToolbarSection key={i} items={section} />
         )
       }
-    </ToolbarGroup>
-    <ToolbarGroup>
-      <ToolbarTitle text={title} />
-    </ToolbarGroup>
   </Toolbar>
 )
 

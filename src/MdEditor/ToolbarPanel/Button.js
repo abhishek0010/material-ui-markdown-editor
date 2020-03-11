@@ -1,8 +1,11 @@
-import React, { PropTypes } from 'react'
-import FlatButton from 'material-ui/FlatButton'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+//MUI stuff
+import IconButton from '@material-ui/core/IconButton';
 
 const Button = ({ onClick, style, icon, openDialog, isImageDialog }, { toggleDialog }) => (
-  <FlatButton
+  <IconButton
     onClick={(openDialog ? toggleDialog(isImageDialog) : onClick)} //eslint-disable-line
     style={{ ...style, minWidth: '36px' }}
     icon={icon}

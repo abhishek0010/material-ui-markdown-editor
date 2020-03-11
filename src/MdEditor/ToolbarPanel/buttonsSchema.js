@@ -1,15 +1,17 @@
-import React from 'react'
-import Bold from 'material-ui/svg-icons/editor/format-bold'
-import Italic from 'material-ui/svg-icons/editor/format-italic'
-import Size from 'material-ui/svg-icons/editor/format-size'
-import BulletsList from 'material-ui/svg-icons/editor/format-list-bulleted'
-import NumbersList from 'material-ui/svg-icons/editor/format-list-numbered'
-import Quote from 'material-ui/svg-icons/editor/format-quote'
-import Code from 'material-ui/svg-icons/action/code'
-import ImageIcon from 'material-ui/svg-icons/image/image'
-import LinkIcon from 'material-ui/svg-icons/editor/insert-link'
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more'
-import { lightBlack } from 'material-ui/styles/colors'
+import React from 'react';
+
+//MUI Stuff
+import Bold from '@material-ui/icons/FormatBold';
+import Italic from '@material-ui/icons/FormatItalic';
+import Size from '@material-ui/icons/FormatSize';
+import BulletsList from '@material-ui/icons/FormatListBulleted';
+import NumbersList from '@material-ui/icons/FormatListNumbered';
+import Quote from '@material-ui/icons/FormatQuote';
+import Code from '@material-ui/icons/Code';
+import ImageIcon from '@material-ui/icons/Image';
+import LinkIcon from '@material-ui/icons/InsertLink';
+import NavigationExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { lightBlack } from '@material-ui/core/colors'
 import {
   getUrlStyleIfActive,
   getStyleIfActive,

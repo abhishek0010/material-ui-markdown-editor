@@ -1,4 +1,4 @@
-import { grey400 } from 'material-ui/styles/colors'
+import { grey400 } from '@material-ui/core/colors'
 
 const incrementPosition = (summand, position) => {
   const pos = Object.assign({}, position)

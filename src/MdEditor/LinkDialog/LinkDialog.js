@@ -1,7 +1,15 @@
-import React, { PropTypes } from 'react'
-import Dialog from 'material-ui/Dialog'
-import FlatButton from 'material-ui/FlatButton'
-import TextField from 'material-ui/TextField'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+//MUI stuff
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 import { getUrl, isUrl, setUrl, updateUrl } from '../formatting'
 
@@ -48,11 +56,44 @@ export default class LinkDialog extends React.Component {
     return isUrl(tokens) ? updateUrl(cm, url) : setUrl(cm, url, isImageDialog)
   }
 
+  handleClose() {
+    setOpen(false);
+  }
+
   render() {
     const { isDialogOpen } = this.props
     const { toggleDialog } = this.context
     return (
-      <Dialog
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Insert hyperlink</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please paste the hyperlink below:
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="url"
+            label="Url"
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )
+  }
+}
+
+/*
+<Dialog
         title="Insert hyperlink"
         actions={[
           <FlatButton
@@ -82,6 +123,4 @@ export default class LinkDialog extends React.Component {
           }}
         />
       </Dialog>
-    )
-  }
-}
+*/

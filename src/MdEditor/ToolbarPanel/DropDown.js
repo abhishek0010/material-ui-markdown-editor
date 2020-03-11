@@ -1,10 +1,13 @@
-import React, { PropTypes } from 'react'
-import MenuItem from 'material-ui/MenuItem'
-import IconButton from 'material-ui/IconButton'
-import IconMenu from 'material-ui/IconMenu'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+//MUI stuff
+import MenuItem from '@material-ui/core/MenuItem'
+import IconButton from '@material-ui/core/IconButton'
+import Menu from '@material-ui/core/Menu'
 
 const DropDown = ({ icon, style, options, onItemTouchTap }) => (
-  <IconMenu
+  <Menu
     onItemTouchTap={onItemTouchTap}
     iconButtonElement={
       <IconButton style={style}>
@@ -15,7 +18,7 @@ const DropDown = ({ icon, style, options, onItemTouchTap }) => (
     {
       options.map((option, i) => <MenuItem key={i} {...option} />)
     }
-  </IconMenu>
+  </Menu>
 )
 
 DropDown.propTypes = {
